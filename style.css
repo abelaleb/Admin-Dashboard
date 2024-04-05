@@ -21,7 +21,7 @@ body {
   color: black;
   background-color: white;
   display: grid;
-  grid-template: auto/2fr 2fr 1fr;
+  grid-template: auto/3fr 3fr 1fr;
   grid-template-areas:
     "one one one"
     "two two three"
@@ -30,41 +30,124 @@ body {
 }
 .header {
   grid-area: one;
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
 }
 .projects {
   grid-area: two;
-  background-color: brown;
+  background-color: #dddeeb;
+  display: grid;
+  grid-template: auto/ 1fr 1fr;
 }
 .announcements {
   grid-area: three;
-  background-color: #b37d7d;
+  background-color: #dddeeb;
+  border: 1px solid black;
 }
 .trending {
   grid-area: four;
-    background-color: #37438a;}
-.dashboard{
+  background-color: #dddeeb;
+  border: 1px solid black;
+}
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1.75rem;
+  padding-bottom: 2rem;
+}
+.dashboardicon {
+  width: 3rem;
+}
+.sidecontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.75rem;
+  padding-left: 10%;
+  font-weight: 700;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+.sideicons {
+  width: 1.5rem;
+}
+.headerTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
+  img {
+    height: 2rem;
+  }
+  .headerSearch {
+    flex: 1;
+    justify-content: start;
+    display: flex;
+    gap: 1rem;
+    padding-left: 2rem;
+  }
+  .headerIcons {
+    display: flex;
+    flex: 0.64;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  input {
+    background-color: #dddeeb;
+    font-size: 1rem;
+    padding: 0rem 1rem;
+    border-radius: 2rem;
+    outline: none;
+    border: 1.75px solid #ffffff;
+    width: 90%;
+    min-width: 10rem;
+  }
+}
+#smallerIcons {
+  width: 1.5rem;
+}
+.headerBottom {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 2rem 0 0 2rem;
+  gap: 30%;
+  img {
+    width: 3rem;
+  }
+  .headerIntro {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    #smallP{
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    #bigP{
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+  }
+  .headerButtons {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 900;
-    font-size: 1.75rem;
-    padding-right: 50px;
-    padding-bottom: 2rem;
-}
-.dashboardicon{
-    width: 3rem;
-}
-.sidecontent{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-    padding-left: 10%;
-    font-weight: 700;
-    font-size: 1rem;
-    padding-bottom: 1rem;
-}
-.sideicons{
-    width: 1.5rem;
+    gap: 1rem;
+  }
+  button {
+    background-color: #0284c7;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #02547e;
+  }
 }
