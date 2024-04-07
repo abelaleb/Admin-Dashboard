@@ -11,9 +11,9 @@ body {
 .sidebar {
   color: white;
   background-color: #0284c7;
-  height: 110vh;
+  height: 100%;
   display: grid;
-  grid-template: 1fr;
+  grid-template: 0.5fr 2fr 2fr/1fr;
   text-align: center;
   padding-top: 1em;
 }
@@ -21,7 +21,7 @@ body {
   color: black;
   background-color: white;
   display: grid;
-  grid-template: auto/3fr 3fr 1fr;
+  grid-template: auto/1.5fr 1.5fr 1fr;
   grid-template-areas:
     "one one one"
     "two two three"
@@ -32,29 +32,13 @@ body {
   grid-area: one;
   background-color: rgb(255, 255, 255);
 }
-.projects {
-  grid-area: two;
-  background-color: #dddeeb;
-  display: grid;
-  grid-template: auto/ 1fr 1fr;
-}
-.announcements {
-  grid-area: three;
-  background-color: #dddeeb;
-  border: 1px solid black;
-}
-.trending {
-  grid-area: four;
-  background-color: #dddeeb;
-  border: 1px solid black;
-}
 .dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 900;
   font-size: 1.75rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .dashboardicon {
   width: 3rem;
@@ -63,11 +47,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   padding-left: 10%;
   font-weight: 700;
   font-size: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
+}
+.sidecontent:hover {
+  background-color: #01699c;
 }
 .sideicons {
   width: 1.5rem;
@@ -113,8 +100,11 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 2rem 0 0 2rem;
+  padding: 2rem 0 1rem 2rem;
   gap: 30%;
+
+
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   img {
     width: 3rem;
   }
@@ -122,11 +112,11 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    #smallP{
-      font-size: .75rem;
+    #smallP {
+      font-size: 0.75rem;
       font-weight: 600;
     }
-    #bigP{
+    #bigP {
       font-size: 1.25rem;
       font-weight: 800;
     }
@@ -150,4 +140,94 @@ body {
   button:hover {
     background-color: #02547e;
   }
+}
+.projectContainer {
+  background-color: #dddeeb;
+  grid-area: two;
+  .projects {
+    display: grid;
+    grid-template: auto/ 1fr 1fr;
+    padding-bottom: 2rem;
+  }
+}
+.projectCards {
+  background-color: #fff;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    to right,
+    orange 1.75%,
+    rgba(0, 0, 0, 0) 1.75%
+  );
+  padding: 1.5rem 1rem 1rem 1.5rem;
+  margin: 1rem;
+  border-radius: 5px;
+  #cardTitle {
+    font-weight: 600;
+  }
+  img {
+    width: 1.5rem;
+  }
+  .projectIcons {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+}
+.projectCards:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.annoucementContainer {
+  grid-area: three;
+  background-color: #dddeeb;
+  .announcements {
+    background-color: #dddeeb;
+    padding: 1rem;
+    display: grid;
+    grid-template: auto/1fr;
+    padding-bottom: 2rem;
+    .announcementCard {
+      background-color: #fff;
+      padding: 1rem 1rem 1rem 1.5rem;
+      border-radius: 5px;
+    }
+    #cardTitle {
+      font-weight: 600;
+    }
+  }
+}
+.trendingContainer {
+  grid-area: four;
+  background-color: #dddeeb;
+  img {
+    width: 3rem;
+  }
+  .trendingContainerCards {
+    background-color: #dddeeb;
+    padding: 1rem;
+    display: grid;
+    grid-template: auto/1fr;
+    padding-bottom: 2rem;
+    border-radius: 5px;
+    .trendingCards {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem 1rem 1rem 1.5rem;
+    }
+    .trendingCards:hover {
+      background-color: rgb(240, 236, 236);
+    }
+  }
+}
+
+.cardTitle{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem 0 0 2rem;
+  font-weight: 600;
 }
